@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jQuery.min.js"></script>
+</head>
+<style>
+    input {
+        width: 40px;
+        text-align: center;
+    }
+    .money {
+        border: none;
+    }
+    .count_all,
+    .money_all {
+        border: none;
+        outline: none;
+    }
+</style>
+<body>
+    <div>
+     <input class="one_price" type="text" value="12.60">
+     <button>-</button> 
+     <input class="count" type="text" id="add_minus" value="1">  
+     <button>+</button>
+     ￥<input class="money" type="text" value="12.60">   
+    </div>
+    <div>
+     <input class="one_price" type="text" value="17.60">
+     <button>-</button> 
+     <input class="count" type="text" id="add_minus" value="1">  
+     <button>+</button>
+     ￥<input class="money" type="text" value="17.60"> 
+       
+    </div>
+    <div>
+     <input class="one_price" type="text" value="19.60">
+     <button>-</button> 
+     <input class="count" type="text" id="add_minus" value="1">  
+     <button>+</button>
+     ￥<input class="money" type="text" value="19.60">   
+    </div>
+    <p>
+        共计<input class="count_all" style="border: none;"
+         type="text"value="0">件商品，
+        总计<input class="money_all" style="border: none;"
+         type="text"value="0">元
+    </p>
+    
+</body>
+<script>
+    $(function(){
+        var count_all = 0;
+        var money_all = 0;
+        $('button').click(function(){
+            var index = $(this).index();
+            var num;
+            var price = $(this).siblings('.one_price').val();
+            
+            // console.log(index);
+            if(index == 1){
+                if($(this).siblings('.count').val()>=1){
+                    num = $(this).siblings('.count').val();
+                    num--;
+                    $(this).siblings('.count').val(num);
+                    num = num*price;
+                    $(this).siblings('.money').val(num.toFixed(2));
+                }
+                
+            }
+                
+            else{
+                num = $(this).siblings('.count').val();
+                num++;
+                $(this).siblings('.count').val(num);
+                num = num*price;
+                $(this).siblings('.money').val(num.toFixed(2));
+            }
+            count_all = 0;
+            $('.count').each(function(index,Ele){
+            count_all+=parseInt($(Ele).val()); 
+            console.log(count_all);
+        });
+          
+        $('.count_all').val(count_all); 
+            money_all = 0;
+         $('.money').each(function(index,Ele){
+            
+            money_all+=parseFloat($(Ele).val());  
+        });
+        // console.log(money_all.toFixed(2));
+        $('.money_all').val(money_all);  
+        });
+
+        //     count_all = 0;
+        // $('.count').each(function(index,Ele){
+        // count_all+=parseInt($(Ele).val()); 
+        // console.log(count_all);
+        // });
+
+        //     money_all = 0;
+        //  $('.money').each(function(index,Ele){
+        // money_all+=parseFloat($(Ele).val());  
+        // });
+
+        // 当商品数量发生变化时
+        $('.count').change(function(){
+            var price = $(this).siblings('.one_price').val();
+            var num = $(this).val();
+            num = num*price;
+            $(this).siblings('.money').val(num.toFixed(2));
+        });
+        // 读取初始状态的商品件数
+            count_all = 0;
+        $('.count').each(function(index,Ele){
+            count_all+=parseInt($(Ele).val()); 
+        });
+        //  console.log(count_all);
+        $('.count_all').val(count_all);
+        // 读取初始状态的商品总价
+            money_all = 0;
+        $('.money').each(function(index,Ele){
+            money_all+=parseFloat($(Ele).val());  
+        });
+        // console.log(money_all.toFixed(2));
+        $('.money_all').val(money_all);
+        
+        
+        
+        // 当商品的数量发生变化时
+        $('.count').change(function(){
+            count_all = 0;
+            $('.count').each(function(index,Ele){
+            count_all+=parseInt($(Ele).val()); 
+        });
+        $('.count_all').val(count_all);
+            money_all = 0;
+        $('.money').each(function(index,Ele){
+            money_all+=parseFloat($(Ele).val());  
+        });
+        $('.money_all').val(money_all.toFixed(2));
+        });
+    })
+</script>
+</html>
+
+<!-- 
+    .toFixed(n)
+        可以保留n位小数
+    .parents()
+        返回指定祖先元素
+ -->

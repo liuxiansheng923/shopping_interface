@@ -1,0 +1,84 @@
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.wrap {
+    width: 1000px;
+    /* height: 600px; */
+    border: 2px solid skyblue;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 50px auto;
+}
+
+a {
+    color: skyblue;
+    text-decoration: none;
+}
+
+.item {
+    height: 150px;
+    border: 2px solid skyblue;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.wrap .item > .R {
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+p {
+    float: right;
+}
+
+input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.btn-L {
+    margin-left: 66px;
+}
+.btn-R {
+    margin-right: 66px;
+}
+
+button {
+    background-color: white;
+    border: 1px solid;
+    height: 21px;
+}
+
+.wrap .item > .R:before {
+    content: "单价：";
+    font-size: 14px;
+}
+
+.count {
+    border: 1px solid;
+    height: 17px;
+    margin: 0 -6px;
+}
+
+.L {
+    float: left;
+}
+
+.del {
+    float: right;
+    margin-top: 13px;
+    margin-right: 20px;
+}
+
+.del:hover {
+    background-color: rgb(196,0,0);
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>女神贩卖</title>
+    <script src="../jQuery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/javascript.js"></script>
+</head>
+<body>
+    <div class="wrap clearfix">
+        <div>
+            全选<input class="checkAll" type="checkbox"></input>
+        </div>
+        <div class="item">
+            <div class="L">
+                <input class="s-check" type="checkbox"></input>
+            </div>
+            <button class="del">删除</button>
+            <img src="../img/007.jpg" height="146px">
+            <div class="R">
+                <input class="one_price" type="text" value="12.60">元
+                <button class="btn-L">-</button> 
+                <input class="count" type="text" id="add_minus" value="1">  
+                <button class="btn-R">+</button>
+                总计:<input class="money" type="text" value="12.60">元   
+            </div>
+        </div>
+        <div class="item">
+            <div class="L">
+                <input class="s-check" type="checkbox"></input>
+            </div>
+            <button class="del">删除</button>
+            <img src="../img/002.jpg" height="146px">
+            <div class="R">
+                <input class="one_price" type="text" value="17.60">元
+                <button class="btn-L">-</button> 
+                <input class="count" type="text" id="add_minus" value="1">  
+                <button class="btn-R">+</button>
+                总计:<input class="money" type="text" value="17.60">元 
+            </div>
+        </div> 
+        <div class="item">
+            <div class="L">
+                <input class="s-check" type="checkbox"></input>
+            </div>
+            <button class="del">删除</button>
+            <img src="../img/003.jpg" height="146px">
+            <div class="R">
+                <input class="one_price" type="text" value="19.60">元
+                <button class="btn-L">-</button> 
+                <input class="count" type="text" id="add_minus" value="1">  
+                <button class="btn-R">+</button>
+                总计:<input class="money" type="text" value="19.60">元   
+            </div>
+        </div>
+        <p class="checked_del" style="float:left;"> <a href="#">删除选中的商品</a></p>
+        <p class="all_del" style="float: left;margin-left: 20px;"><a href="#">清除购物车</a></p>
+        <p>
+            共计<input class="count_all" style="border: none;"
+             type="text"value="0">件商品，
+            总计:<input class="money_all" style="border: none;"
+             type="text"value="0">元
+        </p>
+    </div>
+</body>
+</html>
+
+<!-- 
+    知识整理：
+
+        1.input的outline：none；可以消除文本框点击时出现的彩色外边框
+        
+        2.toFixed(n)方法，可以使该数值保留 n 位小数
+
+        3.parseInt()/parseFloat()方法，分别可使文本内容转化为
+            整数型数值和浮点型数值
+
+        4.parents()方法，可以指定选择祖先元素
+
+        5.遍历函数 .each(function(index,ELement){})
+            5.1 $('选择器').each(function(index,ELement){})
+            5.2 $.each('选择器/数组/对象{}',function(index,ELement){})
+            第二种一般用于处理数据
+
+        6.当一个功能频繁使用时，可以考虑封装成函数
+ --> 

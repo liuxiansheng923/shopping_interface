@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jQuery.min.js"></script>
+</head>
+<body>
+    <div><span>锄禾日当午</span></div>
+    <input type="text" value="请输入文字：">
+</body>
+<script>
+    $(function(){
+        // html() 获取html中的内容 包括标签
+        console.log($('div').html());
+        // html("文本内容") 修改html中的内容
+        // console.log($('div').html("汗滴禾下土"));
+        
+        // text 只获取文本
+        console.log($('div').text());
+        console.log($('div').text("粒粒皆辛苦"));
+        console.log($('div').html());
+
+        // val 获取表单值
+        console.log($('input').val());
+        console.log($('input').val("谁知盘中餐"));
+    })
+</script>
+</html>
