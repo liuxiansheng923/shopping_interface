@@ -1,2 +1,1 @@
-# shopping_interface
-the selling of goddess
+# [效果预览](https://liuxiansheng923.github.io/shopping_interface/)
