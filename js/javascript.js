@@ -32,8 +32,13 @@ $(function(){
     $('.count').change(function(){
         var price = $(this).siblings('.one_price').val();
         var num = $(this).val();
-        num = num*price;
-        $(this).siblings('.money').val(num.toFixed(2));
+        if($(this).val()<=999){
+            num = num*price;
+            $(this).siblings('.money').val(num.toFixed(2)); 
+        }
+        else
+            alert('兄弟请你自重！'); 
+        
     });
     
     getSum();
@@ -75,7 +80,17 @@ $(function(){
         var count = 0;
         var money = 0;
         $('.count').each(function(index,Ele){
-            count+=parseInt($(Ele).val());
+            if($(Ele).val()<=999){
+                count+=parseInt($(Ele).val());
+            }
+            
+            
+            else{
+                alert('兄弟请你自重！');
+                $(Ele).val(0);
+                $(Ele).siblings('.money').val(0);
+            }
+                
         });
         $('.count_all').val(count);
         $('.money').each(function(index,Ele){
