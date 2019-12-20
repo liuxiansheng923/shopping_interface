@@ -3,7 +3,7 @@ $(function(){
         var index = $(this).index();
         var num;
         var price = $(this).siblings('.one_price').val();
-        
+
         // console.log(index);
         if(index == 1){
             if($(this).siblings('.count').val()>=1){
@@ -13,9 +13,9 @@ $(function(){
                 num = num*price;
                 $(this).siblings('.money').val(num.toFixed(2));
             }
-            
+
         }
-            
+
         else{
             num = $(this).siblings('.count').val();
             num++;
@@ -34,13 +34,13 @@ $(function(){
         var num = $(this).val();
         if($(this).val()<=999){
             num = num*price;
-            $(this).siblings('.money').val(num.toFixed(2)); 
+            $(this).siblings('.money').val(num.toFixed(2));
         }
         else
-            alert('兄弟请你自重！'); 
-        
+            alert('兄弟请你自重！');
+
     });
-    
+
     getSum();
 
     $('.count').change(getSum);
@@ -48,8 +48,13 @@ $(function(){
     $('.checkAll').change(function(){
         console.log($(this).prop('checked'));
         $('.s-check').prop('checked',$(this).prop('checked'));
-        
-        
+        if($(this).prop('checked')){
+          $('.item').addClass('checked_item');
+        }
+        else{
+          $('.item').removeClass('checked_item');
+        }
+
     });
     $('.s-check').change(function(){
             // console.log($(".s-check:checked").length);
@@ -57,8 +62,14 @@ $(function(){
                 $('.checkAll').prop('checked',true);
             else
                 $('.checkAll').prop('checked',false);
-        });
 
+            if($(this).prop('checked'))
+                $(this).parents('.item').addClass('checked_item');
+            else{
+                $(this).parents('.item').removeClass('checked_item');
+                }
+
+        });
     // 删除事件
         // 删除当前商品
     $('.del').click(function(){
@@ -83,18 +94,18 @@ $(function(){
             if($(Ele).val()<=999){
                 count+=parseInt($(Ele).val());
             }
-            
-            
+
+
             else{
                 alert('兄弟请你自重！');
                 $(Ele).val(0);
                 $(Ele).siblings('.money').val(0);
             }
-                
+
         });
         $('.count_all').val(count);
         $('.money').each(function(index,Ele){
-            money+=parseFloat($(Ele).val());  
+            money+=parseFloat($(Ele).val());
         });
         $('.money_all').val(money.toFixed(2));
     }

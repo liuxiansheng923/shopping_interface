@@ -82,3 +82,7 @@ button {
 .del:hover {
     background-color: rgb(196,0,0);
 }
+
+.checked_item {
+  background-color: #fff4e8;
+}
